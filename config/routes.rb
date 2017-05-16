@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'items/create'
+
   get 'welcome/index'
   get 'about' => 'welcome#about'
 
-  #resources :users, only: [:show]  
+   resources :users, only: [] do
+    resources :items, only: [:create, :new]
+  end  
   
   #root 'welcome#index'
   
