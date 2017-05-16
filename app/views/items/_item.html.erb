@@ -1,0 +1,5 @@
+<% @items.each do |item| %>
+    <% if item.user == current_user %>
+      <ol> <%= item.name %> </ol>
+    <% end %>
+<% end %>
