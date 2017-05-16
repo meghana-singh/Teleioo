@@ -9,6 +9,15 @@
    </div>
    <div class="col-md-4">
      <h2>Tasks for the Week</h2>
-     <p>List of Tasks </p>
+     <% @items.each do |item| %>
+       <ol> <%= item.name %> </ol>
+     <% end %>
    </div>
+   <% if current_user %>
+     <div class="col-md-4">
+       <h2>Add New Tasks for the Week</h2>
+       <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-success' %>
+     </div>
+   <% end %>
+   
 </div>
