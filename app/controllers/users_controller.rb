@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def show
       @user  = current_user
-      @items = Item.all
+      @items = @user.items
     end
 end
