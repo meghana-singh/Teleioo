@@ -1,22 +1,28 @@
  <div class="jumbotron">
    <p> There is nothing so fatal to character as half finished tasks. - David Lloyd George </p> 
  </div>
- 
+
 <div class="row">
-   
-   <div class="col-md-4">
-     <h2>Tasks for the Week</h2>
-     <%= render partial: 'items/item', locals: { user: current_user, items: @items } %>
-   </div>
-   <div class="col-md-4">
-     <h2>Time Remaining for Completion</h2>
-     <p>Add Time left for each task</p>
-   </div>
-   <% if current_user %>
-     <div class="col-md-4">
-       <h2>Add New Tasks for the Week</h2>
-       <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-success' %>
-     </div>
-   <% end %>
-   
+  <div class="col-md-8">
+    <div class="media">
+      <div class="media-body">
+        <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-success' %>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Days left</th>
+              <th>Complete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class='js-items'>
+              <%= render @items  %>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+
