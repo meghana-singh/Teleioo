@@ -45,5 +45,18 @@ RSpec.describe ItemsController, type: :controller do
       end
     end
   
+    describe "DELETE destroy" do
+      it "deletes the item" do
+        delete :destroy, format: :js, user_id: factory_user.id, id: factory_item.id
+        count = Item.where({id: factory_item.id}).size
+        expect(count).to eq 0
+      end
+
+      it "redirects to posts index" do
+        delete :destroy, format: :js, user_id: factory_user.id, id: factory_item.id
+        expect(response).to have_http_status (:success)     
+      end
+    end
+    
   end
 end

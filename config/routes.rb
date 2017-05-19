@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'about' => 'welcome#about'
 
    resources :users, only: [] do
-    resources :items, only: [:create, :new]
+    resources :items, only: [:create, :new, :destroy]
   end  
   
   #root 'welcome#index'
