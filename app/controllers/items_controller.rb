@@ -23,11 +23,10 @@ class ItemsController < ApplicationController
     
     if @item.destroy
       flash[:notice] = "Task was deleted."
-      
     else
       flash.now[:alert] = "There was an error deleting the task. Please try again."
-      
     end
+    
     respond_to do |format|
       format.html
       format.js
@@ -35,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def post_params
-    params.require(:item).permit(:name)
+    params.require(:item).permit(:name, :created_at)
   end
   
 end
