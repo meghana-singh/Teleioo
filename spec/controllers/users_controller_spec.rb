@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
  describe "not signed in" do
-     let(:factory_user)  { create(:user) }
-     let(:factory_item)  { create(:item, user: factory_user) }
+     let(:factory_user)         { create(:user) }
+     let(:factory_item)         { create(:item, user: factory_user) }
+     let(:seven_days_old_item)  { Item.create!(name: "old item", created_at: 8.days.ago, user: factory_user)}
      
      before do
       @user   = factory_user
@@ -30,6 +31,11 @@ RSpec.describe UsersController, type: :controller do
        get :show, {id: factory_user.id}
        expect(assigns(:items)).to eq([factory_item])
      end
-     
+   
+     it "deletes 7 days old items" do
+       get :show, {id: factory_user.id}
+       expect(assigns(:items)).not_to eq([seven_days_old_item])
+     end
+    
    end
 end
