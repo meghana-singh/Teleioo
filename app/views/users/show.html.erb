@@ -2,17 +2,16 @@
    There is nothing so fatal to character as half finished tasks. - David Lloyd George 
  </div>
 
-<div class="row">
-  <div class="col-md-8">
-    <div class="media">
-      <div class="media-body">
-        <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-success' %>
+
+  
+      <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-success' %>
+      <div class="table-responsive">
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>Description</th>
-              <th>Days left</th>
-              <th>Complete</th>
+              <th class="col-md-6">Description</th>
+              <th class="col-md-3">Days left</th>
+              <th class="col-md-3">Complete</th>
             </tr>
           </thead>
           <tbody>
@@ -23,6 +22,7 @@
         </table>
       </div>
     </div>
-  </div>
-</div>
+    </div>
+  
+
 

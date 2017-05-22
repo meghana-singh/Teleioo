@@ -4,8 +4,8 @@ RSpec.describe ItemsController, type: :controller do
     
   describe "not signed in" do
       
-    let(:factory_user) { create(:user) }
-    let(:factory_item)      { create(:item, user: factory_user) }
+    let(:factory_user)         { create(:user) }
+    let(:factory_item)         { create(:item, user: factory_user) }
     
       before do
         @user   = factory_user
