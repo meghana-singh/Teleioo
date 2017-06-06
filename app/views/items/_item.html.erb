@@ -1,8 +1,6 @@
 
-  <%= content_tag :tr, class: "info", id: "item-#{item.id}" do %>
-    <td class="col-md-6"><%= item.name %></td>
-    
-    <td class="col-md-3"><%= time_remaining_for_item_comp(item.created_at) %></td>
-    
-    <td class="col-md-3"><%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %></td>
-  <% end %>
+<%= content_tag :tr, class: "info", id: "item-#{item.id}" do %>
+  <td class="col-md-6"><%= item.name %></td>
+  <td class="col-md-3"><%= time_remaining_for_item_comp(item.created_at) %></td>
+  <td class="col-md-3"><%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %></td>
+<% end %>
