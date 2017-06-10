@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+Rails 4.2.5
 
 * How to run the test suite
+rspec spec
 
-* Services (job queues, cache servers, search engines, etc.)
+* Details of the App
+Teleioo is a an application that helps you keep track of your weekly tasks.
+These tasks are self destructing which means if you don't complete them in a weeks time, they auto delete.
+Motivational quotes on the tasks page keep you motivated in completing your tasks. :) 
 
-* Deployment instructions
+Device Gem: For authorization.
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Rake Task: (lib/tasks/todo.rake)
+"delete_items" is schdeuled to run every day to check and delete tasks that are more than 7 days old.
