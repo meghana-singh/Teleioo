@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'items/create'
+  #get 'items/create'
 
   get 'welcome/index'
   get 'about' => 'welcome#about'
 
-   resources :users, only: [] do
+  resources :users, only: [] do
     resources :items, only: [:create, :new, :destroy]
   end  
   

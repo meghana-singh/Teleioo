@@ -34,7 +34,8 @@ class ItemsController < ApplicationController
   end
 
   def post_params
-    params.require(:item).permit(:name, :created_at)
+    #params.require(:item).permit(:name, :created_at) #Only when U want to test self destructing feature.
+    params.require(:item).permit(:name)
   end
   
 end

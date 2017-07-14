@@ -1,1 +1,4 @@
+<!-- Have the item element fadeout of visability -->
 $('#item-<%= @item.id %>').fadeOut(1300);
+<!-- When a task is completed, track it by making API request to webAnalytics -->
+webAnalytics.report("User Task completed");
