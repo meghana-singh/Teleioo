@@ -23,7 +23,8 @@ webAnalytics.report = function(eventName) {
    var event   = {event: { name: eventName }};
    var request = new XMLHttpRequest();
  
-   request.open("POST", "https://web-analytics-meghana1602.c9users.io/api/events", true);
+   //request.open("POST", "https://web-analytics-meghana1602.c9users.io/api/events", true);
+   request.opend("POST", "https://secret-brushlands-22130.herokuapp.com/api/events", true);
    request.setRequestHeader('Content-Type', 'application/json');
    request.send(JSON.stringify(event));
 };
